@@ -7,7 +7,7 @@ export function setToken(token) {
 }
 
 export function isLoggedIn() {
-    return true;
+    return getToken() != undefined;
 }
 
 export function logIn(token) {
