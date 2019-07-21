@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+// import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import Menu from './components/Menu';
+import NewTask from './components/NewTask';
 import SearchTask from './components/SearchTask';
 import SignIn from './components/SignIn';
 
@@ -37,6 +39,7 @@ class App extends Component {
       <div>
         <Router>
           {this.state.isLoggedIn ? <Route render={(routeProps) => <Menu {...routeProps} logOut={this.logOut} />} /> : ""}
+          <Route path="/new-task" component={NewTask} />
           <Route path="/search-task" component={SearchTask} />
           <Route path="/sign-in" render={(routeProps) => <SignIn {...routeProps} logIn={this.logIn} />} />
         </Router>

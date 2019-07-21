@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { logOut } from '../services/SessionService';
 
-import { withRouter } from 'react-router-dom'
+// import { withRouter } from 'react-router-dom'
 
 export default class Menu extends Component {
 

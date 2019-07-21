@@ -7,7 +7,7 @@ export default class SignIn extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: "asd",
+            email: "",
             password: ""
         }
 
@@ -43,10 +43,13 @@ export default class SignIn extends Component {
             })
             .then(res => res.json()
                 .then(resJson => {
-                    console.log(resJson.data);
-                    logIn(resJson.data);
-                    this.props.history.push('/search-task');
-                    this.props.logIn();
+                    if (logIn(resJson.data)) {
+                        this.props.history.push('/search-task');
+                        this.props.logIn();
+                    }
+                    else {
+                        console.log("wrong email or password");
+                    }
                 }));
     }
 
